@@ -41,7 +41,7 @@ This project uses GitHub Actions to run tests on every push to the main branch a
 Test reports are automatically generated and published to GitHub Pages after successful runs on the main branch.
 
 You can view the latest test report at:
-`https://{username}.github.io/{repository-name}/report.html`
+`https://{username}.github.io/{repository-name}/`
 
 ## Usage
 

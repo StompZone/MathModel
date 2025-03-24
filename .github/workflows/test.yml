@@ -58,6 +58,12 @@ jobs:
           name: test-results
           path: test-results
 
+      - name: Rename report.html to index.html
+        run: |
+          if [ -f "test-results/report.html" ]; then
+            mv test-results/report.html test-results/index.html
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
