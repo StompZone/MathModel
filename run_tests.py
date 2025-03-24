@@ -7,6 +7,7 @@ This script provides a convenient way to run tests with different options.
 
 import argparse
 import logging
+import os
 import subprocess
 import sys
 
@@ -39,8 +40,19 @@ def main() -> int:
         action="store_true",
         help="Generate HTML report",
     )
+    parser.add_argument(
+        "--output-dir",
+        "-o",
+        default="test-results",
+        help="Output directory for reports",
+    )
 
     args = parser.parse_args()
+
+    # Create output directory if it doesn't exist
+    if args.html or args.xml:
+        os.makedirs(args.output_dir, exist_ok=True)
+        logger.info(f"Created output directory: {args.output_dir}")
 
     # Base command
     cmd = ["poetry", "run", "pytest"]
@@ -51,12 +63,14 @@ def main() -> int:
 
     if args.coverage:
         cmd.extend(["--cov=mathmodel", "--cov-report=term-missing"])
+        if args.html:
+            cmd.append(f"--cov-report=html:{args.output_dir}/coverage")
 
     if args.xml:
-        cmd.append("--junitxml=test-results.xml")
+        cmd.append(f"--junitxml={args.output_dir}/test-results.xml")
 
     if args.html:
-        cmd.append(f"--html=test-results.html")
+        cmd.append(f"--html={args.output_dir}/report.html")
         cmd.append("--self-contained-html")
 
     if args.test:
