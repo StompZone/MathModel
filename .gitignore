@@ -17,3 +17,6 @@ test-results.html
 *.so
 *.cpython-3*
 *.cpython-3*~
+
+.vscode/
+.idea/
