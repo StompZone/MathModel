@@ -2,6 +2,9 @@
 
 *A neural network model to predict arithmetic operation results.*
 
+
+ [![GitHub License](https://img.shields.io/github/license/StompZone/MathModel)](LICENSE) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/StompZone/MathModel) ![Static Badge](https://img.shields.io/badge/python-%E2%89%A5%203.12-%2344aa33?style=flat&logo=python&logoColor=%23ffdd00) [![Run Tests](https://github.com/StompZone/MathModel/actions/workflows/test.yml/badge.svg)](https://github.com/StompZone/MathModel/actions/workflows/test.yml) [![Discord](https://img.shields.io/discord/599808270655291403?logo=discord&logoColor=%20%235865F2&label=StompZone%20Discord)](https://discord.stomp.zone)
+
 ## Overview
 
 `MathModel` generates synthetic datasets of arithmetic operations (+, -, *, /) and trains a neural network to accurately predict the results of these operations.
