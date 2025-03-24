@@ -1,0 +1,26 @@
+[project]
+name = "mathmodel"
+version = "1.0.0"
+description = "A neural network model to predict arithmetic operation results."
+authors = [
+    { name = "DJ Stomp", email = "85457381+DJStompZone@users.noreply.github.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+train-math-model = "math_model:train_math_model"
+
+[tool.poetry.group.dev.dependencies]
+types-tensorflow = "^2.18.0.20250319"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+pytest-html = "^4.1.1"
+ansi2html = "^1.9.2"
+
+[tool.poetry.dependencies]
+tensorflow = "^2.19.0"
